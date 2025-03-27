@@ -4,7 +4,7 @@ import TodoList from "./component/TodoList";
 
 function App() {
   const [todos, setTodos] = useState<String[]>([]);
-  const [todoValue, setTodoValue] = useState("");
+  const [todoValue, setTodoValue] = useState<String | null>("");
 
   const persistData = (newList: typeof todos) => {
     localStorage.setItem("todos", JSON.stringify({ todos: newList }));
@@ -43,7 +43,7 @@ function App() {
 
     console.log("read from local storage", localTodos);
     localTodos = JSON.parse(localTodos).todos;
-    setTodos(localTodos);
+    // setTodos(localTodos);
   }, []);
 
   return (
