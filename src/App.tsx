@@ -43,7 +43,7 @@ function App() {
     if (!localTodos) return;
 
     console.log("read from local storage", localTodos);
-    const temp = JSON.parse(localTodos);
+    const temp = JSON.parse(localTodos).todos;
     setTodos(temp);
   }, []);
 
