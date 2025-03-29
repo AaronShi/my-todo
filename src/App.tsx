@@ -43,7 +43,7 @@ function App() {
 
     console.log("read from local storage", localTodos);
     localTodos = JSON.parse(localTodos).todos;
-    // setTodos(localTodos);
+    setTodos(localTodos);
   }, []);
 
   return (
