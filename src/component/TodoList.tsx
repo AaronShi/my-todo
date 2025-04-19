@@ -1,14 +1,16 @@
 import TodoCard from "./TodoCard";
+import { Todo, useAppContext } from "./Todo";
 
 export default function TodoList(props: any) {
-  const { todos } = props;
+  const {} = props;
+  const todos = useAppContext();
 
   return (
     <ul className="main">
-      {todos.map((todo: any, todoIndex: number) => {
+      {todos?.map((todo: Todo, todoIndex: number) => {
         return (
           <TodoCard {...props} key={todoIndex} index={todoIndex}>
-            <p>{todo}</p>
+            {todo}
           </TodoCard>
         );
       })}
